@@ -13,8 +13,13 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@imager/lib-store": ["libs/lib-store/src/index.ts"],
+      "lodash/*": ["node_modules/@types/lodash-es/*"]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "import-blacklist": [true, "lodash"]
 }
