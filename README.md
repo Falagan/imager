@@ -36,6 +36,7 @@
   > Git:
     > Strategy: GitFlow.
     > Utils: Husky, Commitlint, Lint-staged and SpellChecker.
+  > Containers: Dockerized 
 
 * ## 3.DESIGN RULES
 
