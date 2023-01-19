@@ -1,0 +1,19 @@
+version: "3"
+services:
+  imager-front:
+    extends:
+      file: docker-compose.base.yml
+      service: base-service
+    command: npm run imager-front:local:docker
+    ports:
+      - 4201:4200
+volumes:
+  mono-node-modules: null
+#Example to add another app to services
+#[appName]:
+   #extends:
+       #file: docker-compose.base.yml
+       #service: base-service
+   #command: 'npm run [appName]:local:docker'
+   #ports:
+   #- 4201:4200
