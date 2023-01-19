@@ -42,7 +42,9 @@
 
   - Standalone strategy
   - Lazy loading
-  -
+  - OnPush strategy
+  - MiniStores with Rxjs to handle state
+  
 * ## 4.ENVIRONMENTS
   ### 4.1.LOCAL
   #### 4.1.1. WITHOUT DOCKER
