@@ -8,6 +8,10 @@ export const APP_ROUTER: Route[] = [
     pathMatch: 'full',
   },
   {
+    path: APP_PATHS.PRIVATE,
+    loadComponent: () => import('./layout/layout.component').then((c) => c.LayoutComponent),
+  },
+  {
     path: '**',
     redirectTo: APP_PATHS.AUTH,
   },

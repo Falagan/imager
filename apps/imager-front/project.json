@@ -16,8 +16,9 @@
         "tsConfig": "apps/imager-front/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/imager-front/src/favicon.ico", "apps/imager-front/src/assets"],
-        "styles": ["apps/imager-front/src/styles.scss"],
-        "scripts": []
+        "styles": ["apps/imager-front/src/styles.scss", "./node_modules/bootstrap/dist/css/bootstrap.min.css"],
+        "scripts": [],
+        "allowedCommonJsDependencies": ["lodash"]
       },
       "configurations": {
         "production": {

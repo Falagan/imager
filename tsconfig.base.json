@@ -16,6 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
+      "@imager/lib-components": ["libs/lib-components/src/index.ts"],
       "@imager/lib-store": ["libs/lib-store/src/index.ts"],
       "lodash/*": ["node_modules/@types/lodash-es/*"]
     }
