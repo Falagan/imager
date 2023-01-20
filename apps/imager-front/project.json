@@ -16,14 +16,7 @@
         "tsConfig": "apps/imager-front/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/imager-front/src/favicon.ico", "apps/imager-front/src/assets"],
-        "styles": [
-          "apps/imager-front/src/styles.scss",
-          {
-            "input": "apps/imager-front/src/assets/themes/dark-theme.scss",
-            "bundleName": "dark-theme",
-            "inject": false
-          }
-        ],
+        "styles": ["apps/imager-front/src/styles.scss", "./node_modules/bootstrap/dist/css/bootstrap.min.css"],
         "scripts": [],
         "allowedCommonJsDependencies": ["lodash"]
       },

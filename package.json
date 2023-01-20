@@ -6,7 +6,8 @@
     "prepare": "husky install",
     "lint-staged": "lint-staged",
     "imager-front:local": "nx serve imager-front",
-    "imager-front:local:docker": "nx serve imager-front --host=0.0.0.0 --poll 5000"
+    "imager-front:local:docker": "nx serve imager-front --host=0.0.0.0 --poll 5000",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,js,jsx,html,css,scss}\" \"libs/**/*.{ts,tsx,js,jsx,html,css,scss}\""
   },
   "private": true,
   "devDependencies": {
@@ -56,6 +57,7 @@
     "@angular/platform-browser": "~15.1.0",
     "@angular/platform-browser-dynamic": "~15.1.0",
     "@angular/router": "~15.1.0",
+    "bootstrap": "^5.2.3",
     "lodash": "^4.17.21",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

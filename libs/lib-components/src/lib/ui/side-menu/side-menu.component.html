@@ -1,0 +1,22 @@
+<mat-sidenav-container
+  class="h-100"
+  (backdropClick)="sidenav.toggle()"
+  [hasBackdrop]="false"
+  (keydown.escape)="sidenav.close()"
+>
+  <mat-sidenav
+    #sidenav
+    [borderRadius]="5"
+    [mode]="'over'"
+    [fixedInViewport]="true"
+    [fixedTopGap]="marginTop"
+    [fixedBottomGap]="marginBottom"
+    [position]="position || sideMenuPositions.START"
+    [opened]="isOpen"
+  >
+    <ng-content select="[sideMenuContent]"></ng-content>
+  </mat-sidenav>
+  <mat-sidenav-content class="overflow-hidden">
+    <ng-content select="[mainContent]"></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
