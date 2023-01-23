@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseStore } from '@imager/lib-store';
 import { initialState, LayoutState } from '../store/layout-store.config';
 import { Observable } from 'rxjs';
-import { SIDE_MENU_POSITIONS } from '@imager/lib-components';
+import { MenuItem, SIDE_MENU_POSITIONS } from '@imager/lib-components';
 import { THEMES } from '../store/layout-store.consts';
 import { LANGUAGE } from '../../configs/translation.config';
 import { TranslateService } from '@ngx-translate/core';
@@ -23,6 +23,10 @@ export class LayoutService extends BaseStore<LayoutState> {
 
   public get sideMenuPosition$(): Observable<SIDE_MENU_POSITIONS> {
     return this.select<SIDE_MENU_POSITIONS>(({ sideMenuPosition }) => sideMenuPosition);
+  }
+
+  public get mainMenuItems$(): Observable<MenuItem[]> {
+    return this.select<MenuItem[]>(({ mainMenuItems }) => mainMenuItems);
   }
 
   public get languages$() {
@@ -47,5 +51,9 @@ export class LayoutService extends BaseStore<LayoutState> {
   public setLanguage(language: LANGUAGE) {
     this.translateService.use(language);
     this.setState((previousState) => ({ ...previousState, currentLanguage: language }));
+  }
+
+  public setMainMenu(menuItems: MenuItem[]) {
+    this.setState((previousState) => ({ ...previousState, mainMenuItems: menuItems }));
   }
 }

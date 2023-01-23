@@ -1,7 +1,15 @@
 {
+  "APP_NAME": "Imager_",
   "AUTH": {
     "EMAIL": "Email",
     "PASSWORD": "Password",
     "LOGIN": "LogIn"
+  },
+  "SEARCHER": {
+    "SEARCH": "Go!",
+    "SEARCH_PLACEHOLDER": "Search..."
+  },
+  "COMMON": {
+    "NO_RECORDS": "No results found"
   }
 }

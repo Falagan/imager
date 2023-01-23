@@ -1,0 +1,14 @@
+<div class="container-fluid h-100 mt-5">
+  <div class="row h-100 align-items-center">
+    <div class="col-lg-8 offset-lg-2 h-100 text-center">
+      <!-- Search -->
+      <formly-form
+        [form]="formlyForm.form"
+        [fields]="formlyForm.fields"
+        [model]="formlyForm.model"
+        [options]="formlyForm.options"
+        (modelChange)="onModelChanges($event)"
+      ></formly-form>
+    </div>
+  </div>
+</div>

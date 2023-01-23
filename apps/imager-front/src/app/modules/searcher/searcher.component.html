@@ -1,1 +1,15 @@
-<p>searcher works!</p>
+<div class="fixed-top p-2 mt-5">
+  <imager-search-input (textToSearch)="onSearch($event)"></imager-search-input>
+</div>
+<div class="container-fluid h-100 background overflow-auto margin-top" [borderRadius]="5">
+  <div class="row">
+    <div class="col-12">
+      <imager-search-results
+        [images]="searchResults$ | async"
+        [loading]="loading$ | async"
+        [srcProp]="'url'"
+        [descriptionProp]="'description'"
+      ></imager-search-results>
+    </div>
+  </div>
+</div>

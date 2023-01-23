@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <!-- Loading-->
+    <ng-container *ngIf="loading; else list">
+      <div class="col-12 mt-5">
+        <imager-waiter [diameter]="80"></imager-waiter>
+      </div>
+    </ng-container>
+    <!-- Images List-->
+    <ng-template #list>
+      <ng-container *ngIf="images && images.length > 0; else noRecords">
+        <!--  No List-->
+        <div class="col-lg-3 col-12 text-center p-2" *ngFor="let image of images">
+          <mat-card>
+            <img mat-card-image [src]="image[srcProp]" />
+            <mat-card-content>
+              <p>
+                {{ image[descriptionProp] }}
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </ng-container>
+      <!-- No Records-->
+      <ng-template #noRecords>
+        <div class="col-12 text-center p-2">
+          <imager-no-records [message]="'COMMON.NO_RECORDS' | translate"></imager-no-records>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

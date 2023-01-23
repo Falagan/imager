@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { BorderRadiusDirective } from '../../directives';
 
 @Component({
-  selector: 'imager-front-header',
+  selector: 'imager-header',
   standalone: true,
   imports: [CommonModule, MatIconModule, MatButtonModule, MatToolbarModule, BorderRadiusDirective],
   templateUrl: './header.component.html',

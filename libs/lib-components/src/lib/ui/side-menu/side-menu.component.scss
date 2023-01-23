@@ -1,4 +1,8 @@
-:host ::ng-deep .mat-drawer-backdrop {
-  position: fixed !important;
-  top: 50px;
+:host ::ng-deep {
+  .mat-drawer-backdrop {
+    position: fixed !important;
+  }
+  .mat-sidenav {
+    min-width: 270px;
+  }
 }

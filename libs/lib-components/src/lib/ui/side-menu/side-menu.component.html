@@ -1,9 +1,4 @@
-<mat-sidenav-container
-  class="h-100"
-  (backdropClick)="sidenav.toggle()"
-  [hasBackdrop]="false"
-  (keydown.escape)="sidenav.close()"
->
+<mat-sidenav-container class="h-100" (backdropClick)="sidenav.toggle(); onCloseOnClicked()" [hasBackdrop]="true">
   <mat-sidenav
     #sidenav
     [borderRadius]="5"

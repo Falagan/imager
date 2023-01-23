@@ -13,7 +13,8 @@ import { registerTranslateExtension } from '@imager/lib-formly';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TRANSLATION_GLOBAL_CONFIG } from './app/configs/translation.config';
 import { LayoutService } from './app/layout/services/layout.service';
-import { LoadGlobalConfiguration } from './app/configs/init-app.config';
+import { LoadGlobalConfiguration, NX_UNSPLASH_API_KEY, NX_UNSPLASH_API_URL } from './app/configs/app-init.config';
+import { UNSPLASH_API_KEY, UNSPLASH_API_URL } from '@imager/lib-repositories';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -31,5 +32,7 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(FormlyMaterialModule),
     { provide: FORMLY_CONFIG, multi: true, useFactory: registerTranslateExtension, deps: [TranslateService] },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'outline' } },
+    { provide: UNSPLASH_API_KEY, useValue: process.env[NX_UNSPLASH_API_KEY] },
+    { provide: UNSPLASH_API_URL, useValue: process.env[NX_UNSPLASH_API_URL] },
   ],
 }).catch((err) => console.error(err));

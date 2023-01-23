@@ -1,11 +1,11 @@
 import { LayoutService } from '../layout/services/layout.service';
-
 import { LANGUAGE } from './translation.config';
+import { MAIN_MENU_ITEMS } from './app-menu.config';
 
 export function LoadGlobalConfiguration(layoutService: LayoutService) {
   return async () => {
     layoutService.setLanguage(LANGUAGE.ES);
-    // await layoutService.setMenus();
+    layoutService.setMainMenu(MAIN_MENU_ITEMS);
   };
 }
 

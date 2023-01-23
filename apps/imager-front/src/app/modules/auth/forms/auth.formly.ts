@@ -1,4 +1,4 @@
-import { AuthModel } from '../models/auth.model';
+import { Auth } from '../models/auth.model';
 import { FormlyFormOptions } from '@ngx-formly/core';
 import { FormlyEmailValidator } from '@imager/lib-formly';
 import { FormlyBuilder, FormlyForm } from '@imager/lib-formly';
@@ -10,7 +10,7 @@ const options: FormlyFormOptions = {
   },
 };
 
-const model: AuthModel = {
+const model: Auth = {
   email: '',
   password: '',
 };
@@ -41,4 +41,4 @@ const passwordField = FormlyBuilder.field(
 
 const row = FormlyBuilder.row([emailField, passwordField]);
 
-export const AuthForm: FormlyForm<AuthModel> = FormlyBuilder.build<AuthModel>([row], options, model)();
+export const AuthForm: FormlyForm<Auth> = FormlyBuilder.build<Auth>([row], options, model)();

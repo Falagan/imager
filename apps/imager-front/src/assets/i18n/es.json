@@ -1,7 +1,15 @@
 {
+  "APP_NAME": "Imager_",
   "AUTH": {
     "EMAIL": "Email",
     "PASSWORD": "Contraseña",
     "LOGIN": "LogIn"
+  },
+  "SEARCHER": {
+    "SEARCH": "Busca!",
+    "SEARCH_PLACEHOLDER": "Buscar..."
+  },
+  "COMMON": {
+    "NO_RECORDS": "No hay registros"
   }
 }
