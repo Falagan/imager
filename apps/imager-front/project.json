@@ -6,7 +6,7 @@
   "prefix": "imager",
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nrwl/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/imager-front",
@@ -18,7 +18,10 @@
         "assets": ["apps/imager-front/src/favicon.ico", "apps/imager-front/src/assets"],
         "styles": ["apps/imager-front/src/styles.scss", "./node_modules/bootstrap/dist/css/bootstrap.min.css"],
         "scripts": [],
-        "allowedCommonJsDependencies": ["lodash"]
+        "allowedCommonJsDependencies": ["lodash"],
+        "customWebpackConfig": {
+          "path": "apps/imager-front/webpack.config.js"
+        }
       },
       "configurations": {
         "production": {
@@ -48,7 +51,7 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nrwl/angular:webpack-dev-server",
       "configurations": {
         "production": {
           "browserTarget": "imager-front:build:production"

@@ -44,6 +44,7 @@
   - Lazy loading
   - OnPush strategy
   - MiniStores with Rxjs to handle state
+  - Dotenv to handle environment variables
   
 * ## 4.ENVIRONMENTS
   ### 4.1.LOCAL
