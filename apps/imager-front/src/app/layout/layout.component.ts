@@ -6,6 +6,8 @@ import { BorderRadiusDirective, HeaderComponent, SideMenuComponent } from '@imag
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { LANGUAGE } from '../configs/translation.config';
 
 @Component({
   selector: 'imager-front-layout',
@@ -19,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     BorderRadiusDirective,
     MatIconModule,
+    MatButtonToggleModule,
   ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
@@ -27,12 +30,10 @@ import { MatIconModule } from '@angular/material/icon';
 export class LayoutComponent {
   public sideMenuOpened$ = this.layoutService.sideMenuOpened$;
   public sideMenuPosition$ = this.layoutService.sideMenuPosition$;
+  public languages$ = this.layoutService.languages$;
+  public currentLanguage$ = this.layoutService.currentLanguage$;
 
-  constructor(private layoutService: LayoutService) {
-    this.layoutService.theme$.subscribe((theme) => {
-      console.log(theme);
-    });
-  }
+  constructor(private layoutService: LayoutService) {}
 
   toggleSideMenu() {
     this.layoutService.setSideMenuOpened();
@@ -41,4 +42,10 @@ export class LayoutComponent {
   toggleTheme() {
     this.layoutService.setTheme();
   }
+
+  setLanguage({ value }: { value: LANGUAGE }) {
+    this.layoutService.setLanguage(value);
+  }
+
+  trackByFn = (index: number, item: LANGUAGE) => item;
 }

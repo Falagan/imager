@@ -17,7 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "@imager/lib-components": ["libs/lib-components/src/index.ts"],
+      "@imager/lib-formly": ["libs/lib-formly/src/index.ts"],
       "@imager/lib-store": ["libs/lib-store/src/index.ts"],
+      "@imager/lib-translation": ["libs/lib-translation/src/index.ts"],
       "lodash/*": ["node_modules/@types/lodash-es/*"]
     }
   },

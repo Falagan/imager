@@ -1,11 +1,23 @@
 <div class="container-fluid vh-100">
-  <div class="row">
+  <div class="row align-items-center">
     <div class="col-12 p-2">
+      <!--Header-->
       <imager-front-header (toggleSideMenu)="toggleSideMenu()">
-        <mat-slide-toggle (change)="toggleTheme()" themeSwitch><mat-icon>dark_mode</mat-icon></mat-slide-toggle>
+        <!--Theme Toggle-->
+        <mat-slide-toggle themeSwitch (change)="toggleTheme()"><mat-icon>dark_mode</mat-icon></mat-slide-toggle>
+        <!--Language Selector-->
+        <mat-button-toggle-group language (change)="setLanguage($event)" [value]="currentLanguage$ | async">
+          <mat-icon>language</mat-icon>
+          <mat-button-toggle
+            *ngFor="let lang of languages$ | async; let i = index; trackBy: trackByFn"
+            [value]="lang"
+            >{{ lang }}</mat-button-toggle
+          >
+        </mat-button-toggle-group>
       </imager-front-header>
     </div>
     <div class="col-12 p-2">
+      <!--Main Content And Side Menu-->
       <imager-front-side-menu
         [isOpen]="sideMenuOpened$ | async"
         [position]="sideMenuPosition$ | async"
