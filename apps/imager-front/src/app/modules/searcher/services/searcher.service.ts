@@ -67,7 +67,7 @@ export class SearcherService extends BaseStore<SearcherState> {
   // UTILS
 
   private setImages(images: UnSplashPhoto[]) {
-    const parsedImages = images.map((image) => ({ ...image, url: image.urls.small, preview: image.links.html }));
+    const parsedImages = images.map((image) => ({ ...image, url: image.urls.small }));
     return [...this.getState().results, ...parsedImages];
   }
 

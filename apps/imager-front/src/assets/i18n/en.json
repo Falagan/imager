@@ -8,7 +8,8 @@
   "SEARCHER": {
     "SEARCH": "Go!",
     "SEARCH_PLACEHOLDER": "Search...",
-    "FETCH_NEXT_PAGE": "Load more..."
+    "FETCH_NEXT_PAGE": "Load more...",
+    "PREVIEW": "Preview"
   },
   "COMMON": {
     "NO_RECORDS": "No results found"
