@@ -7,7 +7,8 @@
   },
   "SEARCHER": {
     "SEARCH": "Busca!",
-    "SEARCH_PLACEHOLDER": "Buscar..."
+    "SEARCH_PLACEHOLDER": "Buscar...",
+    "FETCH_NEXT_PAGE": "Cargar más"
   },
   "COMMON": {
     "NO_RECORDS": "No hay registros"

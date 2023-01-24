@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid" #target>
   <div class="row align-items-center">
     <!-- Loading-->
-    <ng-container *ngIf="loading; else list">
+    <ng-container *ngIf="loading; else list" #messageContainer>
       <div class="col-12 mt-5">
         <imager-waiter [diameter]="80"></imager-waiter>
       </div>
@@ -9,13 +9,17 @@
     <!-- Images List-->
     <ng-template #list>
       <ng-container *ngIf="images && images.length > 0; else noRecords">
-        <!--  No List-->
-        <div class="col-lg-3 col-12 text-center p-2" *ngFor="let image of images">
+        <!--  List-->
+        <div
+          #imagesList
+          class="col-lg-3 col-12 text-center p-2"
+          *ngFor="let image of images; let i = index; trackBy: trackByImage"
+        >
           <mat-card>
-            <img mat-card-image [src]="image[srcProp]" />
+            <img mat-card-image [src]="image[imageSrcProp]" />
             <mat-card-content>
               <p>
-                {{ image[descriptionProp] }}
+                {{ image[imageDescriptionProp] }}
               </p>
             </mat-card-content>
           </mat-card>

@@ -7,7 +7,8 @@
   },
   "SEARCHER": {
     "SEARCH": "Go!",
-    "SEARCH_PLACEHOLDER": "Search..."
+    "SEARCH_PLACEHOLDER": "Search...",
+    "FETCH_NEXT_PAGE": "Load more..."
   },
   "COMMON": {
     "NO_RECORDS": "No results found"

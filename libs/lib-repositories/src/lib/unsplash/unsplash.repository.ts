@@ -19,9 +19,9 @@ export class UnSplashRepository {
 
   /** Gets pictures by text match search*/
   findPicturesByText(params: SearchParams): Observable<ApiResponsePaginated<UnSplashPhoto>> {
-    const { text, order_by, per_page } = params;
+    const { text, order_by, per_page, page } = params;
     return this.httpClient.get<ApiResponsePaginated<UnSplashPhoto>>(
-      `${this.unSplashApiUrl}/${API_ROUTES.SEARCH_PRE}/${API_ROUTES.SEARCH_PHOTOS}?client_id=${this.unSplashApiKey}&query=${text}&order_by=${order_by}&per_page=${per_page}`,
+      `${this.unSplashApiUrl}/${API_ROUTES.SEARCH_PRE}/${API_ROUTES.SEARCH_PHOTOS}?client_id=${this.unSplashApiKey}&query=${text}&order_by=${order_by}&per_page=${per_page}&page=${page}`,
     );
   }
 }

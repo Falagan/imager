@@ -1,15 +1,33 @@
 <div class="fixed-top p-2 mt-5">
   <imager-search-input (textToSearch)="onSearch($event)"></imager-search-input>
 </div>
-<div class="container-fluid h-100 background overflow-auto margin-top" [borderRadius]="5">
+<div
+  class="container-fluid container-results container-results--background overflow-auto"
+  autoScroll
+  [observableToScrollOn]="resultsRendered$"
+  [borderRadius]="5"
+>
   <div class="row">
     <div class="col-12">
       <imager-search-results
         [images]="searchResults$ | async"
         [loading]="loading$ | async"
-        [srcProp]="'url'"
-        [descriptionProp]="'description'"
+        [imageSrcProp]="'url'"
+        [imageDescriptionProp]="'description'"
+        (changed)="onAutoScroll()"
       ></imager-search-results>
+      <div class="col-12 text-center">
+        <button
+          *ngIf="(isLastPage$ | async) === false"
+          class="w-50 p-2"
+          mat-raised-button
+          color="primary"
+          (click)="loadMore()"
+          [borderRadius]="50"
+        >
+          {{ 'SEARCHER.FETCH_NEXT_PAGE' | translate }}
+        </button>
+      </div>
     </div>
   </div>
 </div>

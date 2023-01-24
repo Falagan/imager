@@ -1,11 +1,13 @@
-.background {
+.container-results {
+  height: calc(100% - 100px);
+  margin-top: 100px;
+}
+
+.container-results--background {
   background-image: url('/assets/img/back.png');
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-}
-
-.margin-top {
-  margin-top: 100px;
+  background-color: #fafafa00;
 }
