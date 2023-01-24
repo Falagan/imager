@@ -62,8 +62,8 @@
           -   Run the application:
 
                   npm install
-                  npm run back-office:local
-                  npm run back-office:local
+                  npm run imager-front:local
+                  npm run imager-front:local
 
   #### 4.1.2. WITH DOCKER
   - Environment variables:
