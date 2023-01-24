@@ -1,0 +1,48 @@
+<div class="container-fluid" #target>
+  <div class="row align-items-center">
+    <!-- Loading-->
+    <ng-container *ngIf="loading; else list" #messageContainer>
+      <div class="col-12 mt-5">
+        <imager-waiter [diameter]="80"></imager-waiter>
+      </div>
+    </ng-container>
+    <!-- Images List-->
+    <ng-template #list>
+      <ng-container *ngIf="images && images.length > 0; else noRecords">
+        <!--  List-->
+        <div
+          #imagesList
+          class="col-lg-3 col-12 p-2"
+          *ngFor="let image of images; let i = index; trackBy: trackByImage"
+        >
+          <mat-card>
+            <img mat-card-image [src]="image[imageSrcProp]" [alt]="image[altProp]" />
+            <mat-card-content class="p-2">
+              <span>
+                {{ image[imageDescriptionProp] }}
+              </span>
+            </mat-card-content>
+            <mat-card-footer >
+              <mat-chip-listbox class="p-2">
+                <mat-chip-option color="primary" *ngFor="let tag of image.tags; let i = index; trackBy: trackByTag"
+                  >#{{ tag.type }}</mat-chip-option
+                >
+              </mat-chip-listbox>
+            </mat-card-footer>
+            <mat-card-actions>
+              <button mat-button color="primary" (click)="onSelectImage(image)">
+                {{ 'SEARCHER.PREVIEW' | translate }}
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </ng-container>
+      <!-- No Records-->
+      <ng-template #noRecords>
+        <div class="col-12 text-center p-2">
+          <imager-no-records [message]="'COMMON.NO_RECORDS' | translate"></imager-no-records>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>

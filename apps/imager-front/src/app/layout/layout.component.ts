@@ -1,13 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { LayoutService } from './services/layout.service';
-import { BorderRadiusDirective, HeaderComponent, SideMenuComponent } from '@imager/lib-components';
+import {
+  BorderRadiusDirective,
+  HeaderComponent,
+  MenuItem,
+  MenuListComponent,
+  SideMenuComponent,
+} from '@imager/lib-components';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { LANGUAGE } from '../configs/translation.config';
+import { TranslateModule } from '@ngx-translate/core';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'imager-front-layout',
@@ -22,6 +31,10 @@ import { LANGUAGE } from '../configs/translation.config';
     BorderRadiusDirective,
     MatIconModule,
     MatButtonToggleModule,
+    TranslateModule,
+    MatListModule,
+    MatMenuModule,
+    MenuListComponent,
   ],
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
@@ -30,10 +43,11 @@ import { LANGUAGE } from '../configs/translation.config';
 export class LayoutComponent {
   public sideMenuOpened$ = this.layoutService.sideMenuOpened$;
   public sideMenuPosition$ = this.layoutService.sideMenuPosition$;
+  public mainMenuItems$ = this.layoutService.mainMenuItems$;
   public languages$ = this.layoutService.languages$;
   public currentLanguage$ = this.layoutService.currentLanguage$;
 
-  constructor(private layoutService: LayoutService) {}
+  constructor(private layoutService: LayoutService, private router: Router) {}
 
   toggleSideMenu() {
     this.layoutService.setSideMenuOpened();
@@ -47,5 +61,9 @@ export class LayoutComponent {
     this.layoutService.setLanguage(value);
   }
 
-  trackByFn = (index: number, item: LANGUAGE) => item;
+  gotTo(menuItem: MenuItem) {
+    this.router.navigate([menuItem.path]);
+  }
+
+  trackByLanguage = (index: number, item: LANGUAGE) => item;
 }

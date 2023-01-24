@@ -13,6 +13,7 @@ export class TranslateExtension implements FormlyExtension {
     field.expressions = {
       ...(field.expressions || {}),
       'props.label': this.translate.stream(props.label || ''),
+      'props.placeholder': this.translate.stream(props.placeholder || ''),
     };
   }
 }

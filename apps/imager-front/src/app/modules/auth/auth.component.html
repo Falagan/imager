@@ -1,7 +1,7 @@
 <div class="container-fluid vh-100">
   <div class="row h-100 align-items-center">
-    <div class="col-10 col-xl-3 align-self-center mx-auto mw-50 text-center">
-      <h1 class="title">imager_</h1>
+    <div class="col-10 col-md-4 align-self-center mx-auto mw-50 text-center">
+      <h1 class="title">{{ 'APP_NAME' | translate }}</h1>
       <form [formGroup]="formlyForm.form" (ngSubmit)="onSubmit()">
         <formly-form
           [form]="formlyForm.form"

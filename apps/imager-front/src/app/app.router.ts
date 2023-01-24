@@ -10,6 +10,12 @@ export const APP_ROUTER: Route[] = [
   {
     path: APP_PATHS.PRIVATE,
     loadComponent: () => import('./layout/layout.component').then((c) => c.LayoutComponent),
+    children: [
+      {
+        path: APP_PATHS.SEARCHER,
+        loadComponent: () => import('./modules/searcher/searcher.component').then((c) => c.SearcherComponent),
+      },
+    ],
   },
   {
     path: '**',

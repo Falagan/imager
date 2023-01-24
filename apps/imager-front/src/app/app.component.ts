@@ -13,5 +13,6 @@ import { LayoutService } from './layout/services/layout.service';
 })
 export class AppComponent {
   public theme$ = this.layoutService.theme$;
+
   constructor(private layoutService: LayoutService) {}
 }
