@@ -6,7 +6,7 @@ services:
       service: base-service
     command: npm run imager-front:local:docker
     ports:
-      - 4201:4200
+      - 4200:4200
 volumes:
   mono-node-modules: null
 #Example to add another app to services

@@ -1,0 +1,23 @@
+<mat-toolbar color="primary" [borderRadius]="5">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <button (click)="onToggleSideMenu()" mat-icon-button aria-label="Example icon-button with a menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+      <div class="col-auto me-auto">
+        <ng-content select="[logo]"></ng-content>
+      </div>
+      <div class="col-auto">
+        <ng-content select="[content]"></ng-content>
+      </div>
+      <div class="col-auto">
+        <ng-content select="[themeSwitch]"></ng-content>
+      </div>
+      <div class="col-auto">
+        <ng-content select="[language]"></ng-content>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

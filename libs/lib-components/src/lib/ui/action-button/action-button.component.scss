@@ -1,0 +1,12 @@
+.container_action_button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  margin: 20px;
+  z-index: 999;
+
+  .__content {
+    position: relative;
+    top: 3px;
+  }
+}

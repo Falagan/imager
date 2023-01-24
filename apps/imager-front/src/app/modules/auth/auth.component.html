@@ -1,0 +1,18 @@
+<div class="container-fluid vh-100">
+  <div class="row h-100 align-items-center">
+    <div class="col-10 col-md-4 align-self-center mx-auto mw-50 text-center">
+      <h1 class="title">{{ 'APP_NAME' | translate }}</h1>
+      <form [formGroup]="formlyForm.form" (ngSubmit)="onSubmit()">
+        <formly-form
+          [form]="formlyForm.form"
+          [fields]="formlyForm.fields"
+          [model]="formlyForm.model"
+          [options]="formlyForm.options"
+        ></formly-form>
+      </form>
+      <button type="submit" mat-raised-button color="primary" (click)="onSubmit()">
+        {{ 'AUTH.LOGIN' | translate }}
+      </button>
+    </div>
+  </div>
+</div>

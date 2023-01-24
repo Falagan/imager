@@ -1,0 +1,43 @@
+<div class="container-fluid vh-100 padding-top">
+  <div class="fixed-top p-2">
+    <!--Header-->
+    <imager-header (toggleSideMenu)="toggleSideMenu()">
+      <h2 logo>{{ 'APP_NAME' | translate }}</h2>
+      <!--Theme Toggle-->
+      <mat-slide-toggle themeSwitch (change)="toggleTheme()">
+        <mat-icon>dark_mode</mat-icon>
+      </mat-slide-toggle>
+      <!--Language Selector-->
+      <mat-button-toggle-group language (change)="setLanguage($event)" [value]="currentLanguage$ | async">
+        <mat-icon>language</mat-icon>
+        <mat-button-toggle
+          *ngFor="let lang of languages$ | async; let i = index; trackBy: trackByLanguage"
+          [value]="lang"
+          >{{ lang }}</mat-button-toggle
+        >
+      </mat-button-toggle-group>
+    </imager-header>
+  </div>
+  <div class="row h-100 align-items-center">
+    <div class="col-12 h-100 p-2">
+      <!--Main Content And Side Menu-->
+      <imager-side-menu
+        [isOpen]="sideMenuOpened$ | async"
+        [position]="sideMenuPosition$ | async"
+        [marginTop]="80"
+        [marginBottom]="10"
+        (closeOnClicked)="toggleSideMenu()"
+      >
+        <!--Main Content -->
+        <div mainContent class="h-100">
+          <router-outlet></router-outlet>
+        </div>
+        <!--Main Side Menu -->
+        <div sideMenuContent>
+          <!-- Menu Items-->
+          <imager-menu-list [items]="mainMenuItems$ | async" (itemClicked)="gotTo($event)"></imager-menu-list>
+        </div>
+      </imager-side-menu>
+    </div>
+  </div>
+</div>

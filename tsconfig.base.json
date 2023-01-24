@@ -13,8 +13,17 @@
     "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@imager/lib-components": ["libs/lib-components/src/index.ts"],
+      "@imager/lib-formly": ["libs/lib-formly/src/index.ts"],
+      "@imager/lib-repositories": ["libs/lib-repositories/src/index.ts"],
+      "@imager/lib-store": ["libs/lib-store/src/index.ts"],
+      "@imager/lib-translation": ["libs/lib-translation/src/index.ts"],
+      "lodash/*": ["node_modules/@types/lodash-es/*"]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "import-blacklist": [true, "lodash"]
 }
