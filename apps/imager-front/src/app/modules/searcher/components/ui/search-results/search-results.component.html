@@ -10,11 +10,7 @@
     <ng-template #list>
       <ng-container *ngIf="images && images.length > 0; else noRecords">
         <!--  List-->
-        <div
-          #imagesList
-          class="col-lg-3 col-12 p-2"
-          *ngFor="let image of images; let i = index; trackBy: trackByImage"
-        >
+        <div #imagesList class="col-lg-3 col-12 p-2" *ngFor="let image of images; let i = index; trackBy: trackByImage">
           <mat-card>
             <img mat-card-image [src]="image[imageSrcProp]" [alt]="image[altProp]" />
             <mat-card-content class="p-2">
@@ -22,7 +18,7 @@
                 {{ image[imageDescriptionProp] }}
               </span>
             </mat-card-content>
-            <mat-card-footer >
+            <mat-card-footer>
               <mat-chip-listbox class="p-2">
                 <mat-chip-option color="primary" *ngFor="let tag of image.tags; let i = index; trackBy: trackByTag"
                   >#{{ tag.type }}</mat-chip-option
