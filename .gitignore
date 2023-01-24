@@ -39,4 +39,4 @@ testem.log
 Thumbs.db
 
 .angular
-apps/imager-front/.env
+#apps/imager-front/.env

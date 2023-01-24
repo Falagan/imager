@@ -10,7 +10,6 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { NoRecordsComponent, WaiterComponent } from '@imager/lib-components';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,7 +22,6 @@ import { MatChipsModule } from '@angular/material/chips';
   imports: [
     CommonModule,
     MatCardModule,
-    NgxSkeletonLoaderModule,
     WaiterComponent,
     NoRecordsComponent,
     TranslateModule,
